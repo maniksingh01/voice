@@ -1,0 +1,22 @@
+<head>
+  <title>voice</title>
+</head>
+
+<body>
+  <h1>Welcome to Meteor!</h1>
+
+  {{> loginButtons}}
+  {{> addForm}}
+</body>
+	
+
+<template name="addForm">
+    <form>
+	<textarea type="text" name="story" rows="30" cols="150"></textarea>
+	<br><br>
+        <input type="submit" value="Add">
+    </form>
+	{{#each player}}
+        <div class="player {{selectedClass}}">{{name}}</div>
+    {{/each}}
+</template>

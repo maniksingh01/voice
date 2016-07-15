@@ -1,0 +1,18 @@
+Template.addForm.events({
+'submit form': function(event){
+    event.preventDefault();
+    var storyVar = event.target.story.value;
+    Enter.insert({
+        name: storyVar,
+    });
+    var res = storyVar.split(" ");
+    document.getElementById("demo").innerHTML = res;
+event.target.story.value = "";
+}
+});
+
+Template.addForm.helpers({
+    'player': function(){
+        return Enter.find();
+    }
+});
